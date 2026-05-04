@@ -1,0 +1,72 @@
+[
+  {
+    "figure": "1001.0317v2-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 7. Evolution of GP Function avgD",
+    "baseline_short": "a plot showing the average duration of the system in the first case.",
+    "baseline_short_words": 13
+  },
+  {
+    "figure": "1001.1026v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 2. Thresholdpe for the butterfly network at SinkT1",
+    "baseline_short": "the probability of error ( l ) of a sinr - to - sinr crossover for different number of measurements.",
+    "baseline_short_words": 20
+  },
+  {
+    "figure": "1001.1026v1-Figure5-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 5. BER and bounds on BER at SinkT1 for 2 codes",
+    "baseline_short": "the ber performance of the ber - based benchmark with different code - based schemes, where c = 0. 1, d = 0. 1, p = 0",
+    "baseline_short_words": 27
+  },
+  {
+    "figure": "1001.1110v1-Figure6-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 6. Outage probability for a mobile located at r = Rc; shadowing impact (without fast fading) for \u03b7 = 3.",
+    "baseline_short": "the outage probability versus sinr for the case where p = 0. 05 db and q = 0. 04 db.",
+    "baseline_short_words": 20
+  },
+  {
+    "figure": "1001.1482v3-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 2: Outage probability: Maximal ratio combining, zero forcing, partial zero forcing (with the optimum number of cancelled interferers established in [19]) and optimum combining withL=3 and\u03c32 = 0.",
+    "baseline_short": "the ( 3, 5 ) case of the proposed scheme versus a d2d - only network, where the distance between the users is 2 m, the number of the users",
+    "baseline_short_words": 30
+  },
+  {
+    "figure": "1001.1625v1-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Figure 3. Performance comparison of augmented lattice reduction with LLL-ZF and LLL-SIC detection with MMSE-GDFE preprocessing for a8\u00d7 8 uncoded MIMO system using16-QAM.",
+    "baseline_short": "the ber performance of mmse - sdf - fill and mmse - sdf - fllll, for the mimo 8\u00d7 8 - qam system with",
+    "baseline_short_words": 24
+  },
+  {
+    "figure": "1001.1872v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 2. SER performance at 4 BPCU for codes for4\u00d7 2 systems",
+    "baseline_short": "the performance of the proposed code and the conventional code.",
+    "baseline_short_words": 10
+  },
+  {
+    "figure": "1001.1902v2-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 3. Performance comparision of the GPU-optimized version on various backends. Performance measurements have been performed both on an Nvidia GPU and a Nehalem-EP socket with eight cores. The RapidMind version is compared to a CUDA version based on cuBLAS and an MKL implementation of the dense matrix-matrix multiplication. Performance measurements are based on double-precision arithmetic.",
+    "baseline_short": "a graph with different size of noise and the corresponding number of noise levels in the dataset.",
+    "baseline_short_words": 17
+  },
+  {
+    "figure": "1001.1915v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 2. Comparision between the 3 approaches in the case of a DBSC channel",
+    "baseline_short": "a plot of the fraction of the training images from the original image and the estimated image. the y - axis represents the percentage of the training images with the original image, and",
+    "baseline_short_words": 33
+  },
+  {
+    "figure": "1001.2228v2-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "ground_truth": "Fig. 7. Relaxed BP algorithm with a Gaussian prior and bounded noise output channel. The plot compares the simulated relaxed BP performance against the predicted performance based on density evolution. Also shown is the performance of the linear MMSE estimator with and without projection to the consistent set.",
+    "baseline_short": "the minimum distance to the nearest nearest neighbor ( k = k ).",
+    "baseline_short_words": 13
+  }
+]

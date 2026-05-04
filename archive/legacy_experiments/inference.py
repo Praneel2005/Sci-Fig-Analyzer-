@@ -54,9 +54,19 @@ def main():
         return image
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = model.to(device)
     file_path = [file_path]
     image = torch.cat([load_demo_image(image_path=image_path, device=device) for image_path in file_path])
-    caption = model.generate(image, sample=True, top_p=0.7, max_length=512, min_length=10)
+    caption = model.generate(
+        image,
+        sample=True,
+        top_p=0.9,
+        max_length=512,
+        min_length=80,
+        num_beams=5,
+        length_penalty=2.0,
+        repetition_penalty=1.3
+    )
     print("The caption for this figure is: " + caption[0] )
     return caption
 

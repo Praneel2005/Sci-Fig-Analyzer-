@@ -1,0 +1,142 @@
+[
+  {
+    "figure": "1001.0317v2-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the average number of iterations required for the algorithm to solve the problem.",
+    "ground_truth": "Fig. 7. Evolution of GP Function avgD",
+    "hf_score": 1.587
+  },
+  {
+    "figure": "1001.1026v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the relative probability of error vs. pixel width for the three graphs with different values of pixel width and pixel width.",
+    "ground_truth": "Fig. 2. Thresholdpe for the butterfly network at SinkT1",
+    "hf_score": 2.148
+  },
+  {
+    "figure": "1001.1026v1-Figure5-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the performance of the code for a ber of 0. 7 % to 1. 8 % bit / s / hz, for the asymptotic channel with qps",
+    "ground_truth": "Fig. 5. BER and bounds on BER at SinkT1 for 2 codes",
+    "hf_score": 3.328
+  },
+  {
+    "figure": "1001.1110v1-Figure6-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "outage probability for the single - user case with \u03b3 = 0. 1, \u03b1 = 2. 3 and \u03bbe = 0. 6 db.",
+    "ground_truth": "Fig. 6. Outage probability for a mobile located at r = Rc; shadowing impact (without fast fading) for \u03b7 = 3.",
+    "hf_score": 3.955
+  },
+  {
+    "figure": "1001.1482v3-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the achievable sum rate with m = 64, k = 8, and pf ( n = 4 ).",
+    "ground_truth": "Fig. 2: Outage probability: Maximal ratio combining, zero forcing, partial zero forcing (with the optimum number of cancelled interferers established in [19]) and optimum combining withL=3 and\u03c32 = 0.",
+    "hf_score": 2.401
+  },
+  {
+    "figure": "1001.1625v1-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the mimo8 bit, 8\u00d78, 6 \u00d76, 16 - qam system with 16 - qam.",
+    "ground_truth": "Figure 3. Performance comparison of augmented lattice reduction with LLL-ZF and LLL-SIC detection with MMSE-GDFE preprocessing for a8\u00d7 8 uncoded MIMO system using16-QAM.",
+    "hf_score": 4.129
+  },
+  {
+    "figure": "1001.1872v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the ber performance of the proposed scheme for various code lengths, where snr = 10db.",
+    "ground_truth": "Fig. 2. SER performance at 4 BPCU for codes for4\u00d7 2 systems",
+    "hf_score": 2.973
+  },
+  {
+    "figure": "1001.1902v2-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the performance comparison of different models on the cifar - 10 dataset.",
+    "ground_truth": "Fig. 3. Performance comparision of the GPU-optimized version on various backends. Performance measurements have been performed both on an Nvidia GPU and a Nehalem-EP socket with eight cores. The RapidMind version is compared to a CUDA version based on cuBLAS and an MKL implementation of the dense matrix-matrix multiplication. Performance measurements are based on double-precision arithmetic.",
+    "hf_score": 2.629
+  },
+  {
+    "figure": "1001.1915v1-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the roc curves for the classifiers.",
+    "ground_truth": "Fig. 2. Comparision between the 3 approaches in the case of a DBSC channel",
+    "hf_score": 3.681
+  },
+  {
+    "figure": "1001.2228v2-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the maximum mse versus the measurement ratio.",
+    "ground_truth": "Fig. 7. Relaxed BP algorithm with a Gaussian prior and bounded noise output channel. The plot compares the simulated relaxed BP performance against the predicted performance based on density evolution. Also shown is the performance of the linear MMSE estimator with and without projection to the consistent set.",
+    "hf_score": 3.682
+  },
+  {
+    "figure": "1001.2274v2-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the achievable rates versus snr for different schemes with the fixed snr of 10 db.",
+    "ground_truth": "Fig. 2: Average Total Occupancy forp = 0.2",
+    "hf_score": 0.597
+  },
+  {
+    "figure": "1001.2277v1-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the function x in the normalized channel gain ( y axis ) and the corresponding channel gain ( y axis ).",
+    "ground_truth": "Figure 7. Decision variable, X2 versus M iterations.",
+    "hf_score": 3.098
+  },
+  {
+    "figure": "1001.2279v1-Figure1-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the diagram for the system with four components and a corresponding area for each part of the system",
+    "ground_truth": "Figure 1. Conventional zoom tracking algorithm [15]",
+    "hf_score": 1.548
+  },
+  {
+    "figure": "1001.2307v1-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the probability of successful access of an smse in a mimo system versus the snr for different relaying schemes, when the bs is fixed at the destination, where the",
+    "ground_truth": "Fig. 3. SMSE analysis of the proposed precoder,M = 5, K = 5, Nk = 1, Lk = 1 \u2200k, B = 10, QPSK",
+    "hf_score": 2.79
+  },
+  {
+    "figure": "1001.2307v1-Figure7-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the average ber for different quantization based combinings.",
+    "ground_truth": "Fig. 7. Different receive combining techniques with multiple data streams per userM = 4, Nk = 3, Lk = 2, \u2200k, B = 12, BPSK",
+    "hf_score": 3.797
+  },
+  {
+    "figure": "1001.2327v3-Figure2-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the state tree used in example 2.",
+    "ground_truth": "Fig. 2: Example",
+    "hf_score": 1.287
+  },
+  {
+    "figure": "1001.2636v1-Figure5-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the results for the test case in table ii. the lines represent the mean error ( x - axis ) and the line represents the standard deviation ( y - axis ).",
+    "ground_truth": "Figure 5: Dependence of the final value of the correlation function \u03a6 on the order N .",
+    "hf_score": 2.901
+  },
+  {
+    "figure": "1001.2938v1-Figure8-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the average rate versus relay location d for different relay locations and the normalized power consumption.",
+    "ground_truth": "Fig. 8. Full- and half-duplex cut-set (CS) bound, decode-and forward (DF) rate, and two-hop (2hop) relaying rate with respect to the relay location.",
+    "hf_score": 3.221
+  },
+  {
+    "figure": "1001.2947v2-Figure3-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the optimal binary algorithm vs. the lower bound for the optimal binary algorithms.",
+    "ground_truth": "Fig. 3. Accuracy of approximation onf(\u03be) = E I (BS) k (sin\u03d5 I (BS) k ,i\u2217 ) in Lemma 4.",
+    "hf_score": 3.477
+  },
+  {
+    "figure": "1001.3038v2-Figure1-1.png",
+    "figure_type": "Graph Plot",
+    "generated": "the error in the distribution of the number of particles n ( x ), with different values of \u03b1.",
+    "ground_truth": "Figure 1 A Typical Cumulative Exponential Distribution",
+    "hf_score": 2.414
+  }
+]
