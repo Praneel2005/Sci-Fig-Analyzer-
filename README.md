@@ -42,9 +42,9 @@ Before running the code, you must download the datasets and our trained model we
    - **FigCaps-HF Dataset:** Contains the 13,355 test images and short ground-truth captions. [Download FigCaps Dataset Here](#) *(Replace with actual link)*. Place the images in `figcaps_data/No-Subfig-Img/` and JSONs in `figcaps_data/Caption-All/`.
    - **SciCap+ Dataset:** Used for our paragraph fine-tuning experiments. [Download SciCap Dataset Here](#) *(Replace with actual link)*.
 2. **Trained Checkpoints:**
-   - Because model weights are large, they are not hosted on this GitHub repository. 
-   - **Download our Phase 1 BLIP Checkpoint:** [Insert Google Drive / HuggingFace Link Here]
-   - Place the downloaded checkpoint folder inside the `archive/checkpoints/` directory.
+   - Because model weights are large, they are hosted on Hugging Face instead of GitHub. 
+   - **Download our Model Checkpoints:** [Hugging Face Repository: Praneel2005/Sci-Fig-Analyzer-Checkpoints](https://huggingface.co/Praneel2005/Sci-Fig-Analyzer-Checkpoints)
+   - Place the downloaded checkpoint folders inside the `archive/checkpoints/` directory.
 
 ---
 
@@ -55,7 +55,7 @@ Follow these steps to replicate our findings from scratch.
 ### Step 1: Environment Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Sci-Fig-Analyzer.git
+git clone https://github.com/Praneel2005/Sci-Fig-Analyzer-.git
 cd Sci-Fig-Analyzer
 
 # Create a conda environment
