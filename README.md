@@ -89,6 +89,20 @@ python scripts/evaluation/eval_qwen_full.py
 
 ---
 
+## 🏗️ System Architecture
+
+Our complete pipeline is divided into two phases, seamlessly moving from Data Preprocessing into advanced Vision-Language reasoning.
+
+### Phase 1: Short Caption Generation Pipeline
+In the first phase, we extract raw text from figures using OCR and inject it into the BLIP architecture, which allows the model to "read" the axes and legends of scientific plots.
+![Phase 1 Architecture](diagram1.png)
+
+### Phase 2: Paragraph Generation Pipeline
+In the second phase, we utilize the Qwen2.5-VL Foundation Model in a Zero-Shot capacity. A Vision-Language Projection layer translates visual embeddings into the LLM's semantic space, allowing the model to generate robust, analytical paragraphs without suffering from fine-tuning hallucination.
+![Phase 2 Architecture](diagram2.png)
+
+---
+
 ## 🚀 Web Application
 
 We provide a beautiful, modern React + FastAPI web application that allows users to upload any research PDF. The backend automatically extracts the figures using `PyMuPDF` and streams AI-generated analytical paragraphs to the frontend using Server-Sent Events (SSE).
