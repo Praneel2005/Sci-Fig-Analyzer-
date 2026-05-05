@@ -61,3 +61,44 @@ class QwenModelRunner:
         input_len = inputs["input_ids"].shape[1]
         generated = self.processor.decode(output_ids[0][input_len:], skip_special_tokens=True).strip()
         return generated
+
+    def chat_about_figure(self, image_path, paragraph, question):
+        self.load_model()
+        image = Image.open(image_path).convert("RGB")
+        
+        # Combine the previous context with the user's question
+        chat_prompt = f"You are a scientific assistant. You previously generated this detailed description for the provided scientific figure:\n\"{paragraph}\"\n\nThe user asks: \"{question}\"\n\nAnswer the user's question accurately in 2 to 3 simple sentences based on the figure and the description. Do not hallucinate."
+        
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "image": image},
+                    {"type": "text", "text": chat_prompt}
+                ]
+            }
+        ]
+
+        from qwen_vl_utils import process_vision_info
+        text_input = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        image_inputs, _ = process_vision_info(messages)
+
+        inputs = self.processor(
+            text=[text_input],
+            images=image_inputs,
+            padding=True,
+            return_tensors="pt"
+        ).to(self.device)
+
+        with torch.no_grad():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=150,  # Keep it short (2-3 sentences)
+                temperature=0.3,     # Lower temperature for factual answering
+                do_sample=True,
+                repetition_penalty=1.1
+            )
+
+        input_len = inputs["input_ids"].shape[1]
+        generated = self.processor.decode(output_ids[0][input_len:], skip_special_tokens=True).strip()
+        return generated

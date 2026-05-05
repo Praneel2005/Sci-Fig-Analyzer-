@@ -32,3 +32,4 @@ img_extracted/
 
 # Giant logs (optional to ignore, but safe)
 *.log
+upload_to_hf_fixed.py

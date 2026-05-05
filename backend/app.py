@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, Request
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from sse_starlette.sse import EventSourceResponse
 from fastapi.staticfiles import StaticFiles
@@ -100,6 +101,35 @@ async def stream_results(request: Request, job_id: str):
         }
             
     return EventSourceResponse(event_generator())
+
+class ChatRequest(BaseModel):
+    image_name: str
+    job_id: str
+    paragraph: str
+    question: str
+
+@app.post("/chat")
+async def chat_with_figure(request: ChatRequest):
+    """
+    Handles a per-image chat question from the frontend.
+    """
+    try:
+        # Determine the image path based on the job ID and image name
+        output_dir = os.path.join(UPLOAD_DIR, request.job_id.replace(".pdf", "_images"))
+        img_path = os.path.join(output_dir, request.image_name)
+        
+        if not os.path.exists(img_path):
+            return {"error": "Image not found on server."}
+            
+        print(f"Chat request for {request.image_name}: {request.question}")
+        
+        # Run inference through the new chat method
+        answer = runner.chat_about_figure(img_path, request.paragraph, request.question)
+        
+        return {"answer": answer}
+    except Exception as e:
+        print(f"Chat error: {str(e)}")
+        return {"error": "An error occurred while generating the response."}
 
 if __name__ == "__main__":
     import uvicorn

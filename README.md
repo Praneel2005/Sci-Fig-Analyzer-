@@ -112,9 +112,13 @@ In the second phase, we utilize the Qwen2.5-VL Foundation Model in a Zero-Shot c
 
 ---
 
-## 🚀 Web Application
+## 🚀 Web Application & Interactive AI Assistant
 
-We provide a beautiful, modern React + FastAPI web application that allows users to upload any research PDF. The backend automatically extracts the figures using `PyMuPDF` and streams AI-generated analytical paragraphs to the frontend using Server-Sent Events (SSE).
+We provide a beautiful, commercial-grade React + FastAPI web application. The application features a complete multi-page architecture:
+- **Landing Page:** A premium, Canva-styled entry point.
+- **Research Dashboard:** A dedicated academic showcase displaying the methodology diagrams and quantitative superiority metrics.
+- **Application Workspace:** The core tool where users upload PDFs. The backend automatically extracts figures and streams AI-generated analytical paragraphs. 
+- **Interactive Per-Image Chatbot:** Every generated figure analysis includes a dedicated chat interface. Users can ask questions specifically about that image, and the Qwen VLM will answer accurately in 2-3 sentences based on visual and textual context.
 
 ### Running the App
 1. Ensure Node.js is installed (`conda install -c conda-forge nodejs`).

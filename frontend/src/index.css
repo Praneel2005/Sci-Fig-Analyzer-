@@ -305,3 +305,477 @@ h1 {
   from { opacity: 0.2; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1.2); }
 }
+
+/* Chatbot Interface */
+.chat-container {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-toggle-btn {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.chat-toggle-btn:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.chat-box {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideUp 0.3s ease forwards;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.chat-message {
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  max-width: 85%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.chat-message.user {
+  background: var(--primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.ai {
+  background: white;
+  color: #1f2937;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.chat-send-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.chat-send-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.chat-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+/* =========================================================================
+   MULTI-PAGE LAYOUT STYLES
+   ========================================================================= */
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  padding-top: 80px; /* offset for fixed navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.logo-icon {
+  color: var(--primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.primary-nav-btn {
+  background: var(--primary);
+  color: white !important;
+  padding: 0.6rem 1.25rem;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.primary-nav-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Home Page */
+.home-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-card {
+  padding: 5rem 4rem;
+  border-radius: 32px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.launch-btn {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.launch-btn:hover {
+  background: var(--primary-hover);
+}
+
+.secondary-btn {
+  background: white;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* Dashboard Page */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.dashboard-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.dashboard-section {
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-icon {
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.architecture-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.architecture-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  background: #f9fafb;
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.architecture-text {
+  padding: 3rem;
+}
+
+.architecture-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.architecture-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.architecture-text ul {
+  list-style-type: none;
+}
+
+.architecture-text li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  background: #f3f4f6;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-card.highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, #a78bfa 100%);
+  color: white;
+}
+
+.metric-card.highlight .metric-label,
+.metric-card.highlight .metric-context {
+  color: rgba(255,255,255,0.9);
+}
+
+.metric-value {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.metric-context {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.qualitative-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.q-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.qualitative-content p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #374151;
+  font-style: italic;
+  border-left: 4px solid #d1d5db;
+  padding-left: 1.5rem;
+}
+
+/* Workspace Specific */
+.workspace-intro {
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.workspace-card {
+  padding: 4rem 3rem;
+}
+
+.upload-hint-text {
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 1rem;
+}
