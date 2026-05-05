@@ -1,5 +1,7 @@
 # Sci-Fig Analyzer: End-to-End Scientific Figure Comprehension
 
+![Methodology Diagram](m1.png)
+
 ## Overview
 Sci-Fig Analyzer is a complete end-to-end Machine Learning pipeline and Web Application designed to automatically extract, comprehend, and describe complex scientific figures from research papers. 
 
