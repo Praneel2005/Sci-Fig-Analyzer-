@@ -5,8 +5,9 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8000';
 
 const FigureCard = ({ result, index, jobId }) => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { role: 'ai', text: "Hi! I'm the AI that analyzed this figure. What would you like to know?" }
+  ]);
   const [inputValue, setInputValue] = useState('');
   const [isChatLoading, setIsChatLoading] = useState(false);
   const chatEndRef = useRef(null);
@@ -16,8 +17,8 @@ const FigureCard = ({ result, index, jobId }) => {
   };
 
   useEffect(() => {
-    if (isChatOpen) scrollToBottom();
-  }, [messages, isChatOpen]);
+    scrollToBottom();
+  }, [messages]);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -45,6 +46,7 @@ const FigureCard = ({ result, index, jobId }) => {
 
   return (
     <div className="figure-card">
+      {/* Column 1: Image */}
       <div className="figure-image-container">
         <img 
           src={result.image_url} 
@@ -52,54 +54,53 @@ const FigureCard = ({ result, index, jobId }) => {
           className="figure-image"
         />
       </div>
-      <div className="figure-content">
-        <div className="figure-title">Figure {index + 1}</div>
+      
+      {/* Column 2: Explanation */}
+      <div className="figure-explanation">
+        <div className="figure-title">
+          <FileText size={20} /> Figure {index + 1} Analysis
+        </div>
         <div className="figure-paragraph">
           {result.paragraph}
         </div>
+      </div>
+      
+      {/* Column 3: Chatbot (Always Open) */}
+      <div className="figure-chatbot">
+        <div className="chat-header">
+          <MessageSquare size={16} /> AI Assistant
+        </div>
         
-        <div className="chat-container">
-          {!isChatOpen ? (
-            <button className="chat-toggle-btn" onClick={() => setIsChatOpen(true)}>
-              <MessageSquare size={16} /> Ask a question about this figure
-            </button>
-          ) : (
-            <div className="chat-box">
-              <div className="chat-messages">
-                <div className="chat-message ai">
-                  Hi! I'm the AI that analyzed this figure. What would you like to know?
-                </div>
-                {messages.map((msg, i) => (
-                  <div key={i} className={`chat-message ${msg.role}`}>
-                    {msg.text}
-                  </div>
-                ))}
-                {isChatLoading && (
-                  <div className="chat-loading">
-                    <span className="typing-indicator"></span> Thinking...
-                  </div>
-                )}
-                <div ref={chatEndRef} />
-              </div>
-              <div className="chat-input-area">
-                <input 
-                  type="text" 
-                  className="chat-input" 
-                  placeholder="Ask about a specific label, trend, or detail..." 
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                />
-                <button 
-                  className="chat-send-btn" 
-                  onClick={handleSendMessage}
-                  disabled={isChatLoading || !inputValue.trim()}
-                >
-                  <Send size={16} />
-                </button>
-              </div>
+        <div className="chat-messages">
+          {messages.map((msg, i) => (
+            <div key={i} className={`chat-message ${msg.role}`}>
+              {msg.text}
+            </div>
+          ))}
+          {isChatLoading && (
+            <div className="chat-loading">
+              <span className="typing-indicator"></span> Thinking...
             </div>
           )}
+          <div ref={chatEndRef} />
+        </div>
+        
+        <div className="chat-input-area">
+          <input 
+            type="text" 
+            className="chat-input" 
+            placeholder="Ask about this figure..." 
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+          />
+          <button 
+            className="chat-send-btn" 
+            onClick={handleSendMessage}
+            disabled={isChatLoading || !inputValue.trim()}
+          >
+            <Send size={16} />
+          </button>
         </div>
       </div>
     </div>
@@ -295,7 +296,7 @@ const AppPage = () => {
             </button>
           </div>
 
-          <div className="figures-grid">
+          <div className="figures-list">
             {results.map((result, index) => (
               <FigureCard key={index} result={result} index={index} jobId={file?.name} />
             ))}

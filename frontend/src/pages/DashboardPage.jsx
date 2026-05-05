@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart3, Image as ImageIcon, Zap, Cpu } from 'lucide-react';
 
+
 const DashboardPage = () => {
   return (
     <div className="dashboard-container">
@@ -16,7 +17,10 @@ const DashboardPage = () => {
           <h2>System Architecture</h2>
         </div>
         <div className="architecture-card">
-          <img src="/m1.png" alt="System Methodology" className="architecture-image" />
+          <div className="architecture-images-wrapper">
+            <img src="/diagram1.png" alt="Methodology Part 1" className="architecture-image" />
+            <img src="/diagram2.png" alt="System Methodology" className="architecture-image" />
+          </div>
           <div className="architecture-text">
             <h3>Two-Phase Pipeline</h3>
             <p>Our methodology seamlessly bridges the gap between raw PDF extraction and advanced Vision-Language reasoning.</p>
@@ -35,7 +39,7 @@ const DashboardPage = () => {
           <h2>Quantitative Superiority</h2>
         </div>
         <p className="section-desc">Evaluation on the full 13,355-sample FigCaps test set.</p>
-        
+
         <div className="metrics-grid">
           <div className="metric-card highlight">
             <div className="metric-value">+166.4%</div>

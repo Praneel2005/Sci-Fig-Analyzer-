@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import AppPage from './pages/AppPage';
@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div className="main-layout">
-        <Navbar />
+        <Sidebar />
         <div className="page-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
