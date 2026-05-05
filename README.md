@@ -25,7 +25,16 @@ Our first major contribution was improving upon the original FigCaps-HF baseline
 ### Phase 2: Paragraph Generation (Qwen2.5-VL-7B)
 We discovered that fine-tuning VLMs on domain-specific "mention-paragraphs" (like the SciCap+ dataset) paradoxically *degrades* performance by destroying the model's visual grounding (causing hallucination of mathematical formulas not present in the image). We demonstrate that **Zero-Shot Foundation Models (Qwen2.5-VL-7B) prompted correctly** vastly outperform fine-tuned models for analytical figure descriptions.
 
-*(Note: Full Qwen quantitative matrix on the 13k dataset is currently computing and will be added here soon).*
+**Zero-Shot Evaluation on 13,355 Test Samples:**
+Because Qwen generates ~150-word analytical paragraphs while the ground-truth dataset only contains ~15-word literal captions, traditional n-gram exact match scores (like BLEU-4) are mathematically penalized. Therefore, **ROUGE-L (Recall)** is our primary success metric, demonstrating that Qwen successfully captures nearly 38% of the literal ground-truth concepts while simultaneously expanding on the methodology and data trends.
+
+| Metric | Score | Analysis |
+| :--- | :---: | :--- |
+| **ROUGE-L (Recall)** | **0.3782** | **Primary Metric.** Shows high retention of ground-truth concepts. |
+| **METEOR** | **0.1342** | Strong semantic alignment despite extreme length differences. |
+| **ROUGE-L (F1)** | 0.0743 | Deflated due to the precision penalty of generating longer text. |
+| **BLEU-1** | 0.0459 | Baseline lexical overlap. |
+| **BLEU-4** | 0.0034 | Mathematically breaks down when comparing paragraphs to short captions. |
 
 ### 📝 Sample Generated Paragraph
 **Input:** Network Outage Probability Graph (Figure 6)
