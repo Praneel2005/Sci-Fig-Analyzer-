@@ -121,19 +121,27 @@ We provide a beautiful, commercial-grade React + FastAPI web application. The ap
 - **Interactive Per-Image Chatbot:** Every generated figure analysis includes a dedicated chat interface. Users can ask questions specifically about that image, and the Qwen VLM will answer accurately in 2-3 sentences based on visual and textual context.
 
 ### Running the App
-1. Ensure Node.js is installed (`conda install -c conda-forge nodejs`).
-2. Install frontend dependencies:
+
+> [!IMPORTANT]
+> **Hardware Requirement:** To run the Vision-Language analysis (Qwen2.5-VL), an NVIDIA GPU with at least **16GB VRAM** is strongly recommended. On lower-end hardware, the model may run significantly slower or fail to load.
+
+1. **Ensure Node.js is installed** (`conda install -c conda-forge nodejs`).
+2. **Hugging Face Setup:** The web application automatically downloads the **Qwen2.5-VL-7B-Instruct** model from the cloud on the first run. Ensure you have ~20GB of free disk space. If the model is gated, run `huggingface-cli login` first.
+3. **Install frontend dependencies:**
 ```bash
 cd frontend
 npm install
 cd ..
 ```
-3. Use our unified startup script:
+4. **Use our unified startup script:**
 ```bash
 chmod +x start_app.sh
 ./start_app.sh
 ```
-This will start the FastAPI backend on `http://localhost:8000` and the React frontend on `http://localhost:5173`. Open the frontend link in your browser to begin!
+This will start the FastAPI backend on `http://localhost:8000` and the React frontend on `http://localhost:5173`. 
+
+> [!TIP]
+> If running on a remote server, ensure you use **SSH Port Forwarding** for ports `5173` and `8000` to access the UI in your local browser.
 
 ---
 
