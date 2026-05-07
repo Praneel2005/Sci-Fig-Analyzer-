@@ -1,9 +1,9 @@
-# Sci-Fig Analyzer: End-to-End Scientific Figure Comprehension
+# LexiVision: Grounded Scientific Figure Understanding with OCR-Augmented Captioning and Zero-Shot Reasoning
 
 ![Methodology Diagram](m1.png)
 
 ## Overview
-Sci-Fig Analyzer is a complete end-to-end Machine Learning pipeline and Web Application designed to automatically extract, comprehend, and describe complex scientific figures from research papers. 
+LexiVision is a complete end-to-end Machine Learning pipeline and Web Application designed to automatically extract, comprehend, and describe complex scientific figures from research papers. 
 
 This repository tackles two distinct challenges in Vision-Language Models (VLMs):
 1. **Short Caption Generation:** Enhancing traditional VLMs (BLIP) with OCR tokens to accurately describe the literal content of a figure.

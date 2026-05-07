@@ -9,8 +9,8 @@ const HomePage = () => {
       <div className="hero-section">
         
         <h1 className="hero-title">
-          <span className="title-primary">Sci-Fig Analyzer</span>
-          <span className="title-secondary">AI Academic Illustration Generator</span>
+          <span className="title-primary">LexiVision</span>
+          <span className="title-secondary">Grounded Scientific Figure Understanding</span>
         </h1>
         
         <p className="hero-subtitle">

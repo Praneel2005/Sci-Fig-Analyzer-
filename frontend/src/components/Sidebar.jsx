@@ -13,6 +13,7 @@ const Sidebar = () => {
     <nav className="sidebar">
       <Link to="/" className="sidebar-logo">
         <Sparkles size={28} />
+        <span style={{marginLeft: '10px', fontWeight: 'bold', color: 'white'}}>LexiVision</span>
       </Link>
       
       <div className="sidebar-nav">

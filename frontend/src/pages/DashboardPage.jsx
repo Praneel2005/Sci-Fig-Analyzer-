@@ -7,7 +7,7 @@ const DashboardPage = () => {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>Research Architecture & Findings</h1>
-        <p>A deep dive into our end-to-end scientific figure comprehension pipeline.</p>
+        <p>A deep dive into the LexiVision end-to-end scientific figure comprehension pipeline.</p>
       </div>
 
       {/* Section 1: Methodology */}
